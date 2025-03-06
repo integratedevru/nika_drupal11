@@ -1,0 +1,141 @@
+# Ignore Drupal core.
+/web/core
+
+# Ignore dependencies that are managed with Composer.
+/vendor
+/bin
+
+# Ignore composer auth.
+/auth.json
+
+# Ignore paths that contain user-generated content.
+/web/sites/*/files
+/web/sites/simpletest
+/tmp
+
+# Ignore contrib modules. These should be created during build process.
+/web/modules/contrib/*
+/web/themes/contrib
+/web/libraries/*
+
+# Ignore standard files created by scaffold.
+web/*.*
+!web/.htaccess
+!web/robots.txt
+
+# ignore pwa app build
+/web/app
+/tools/app/static/version.json
+
+# Ignore custom theme build artifacts.
+node_modules
+
+# OS X.
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear on external disk.
+.Spotlight-V100
+.Trashes
+
+# Windows image file caches.
+Thumbs.db
+ehthumbs.db
+
+# Folder config file.
+Desktop.ini
+
+# Recycle Bin used on file shares.
+$RECYCLE.BIN/
+
+# Eclipse IDE files.
+*.pydevproject
+.project
+.metadata
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+
+# External tool builders
+.externalToolBuilders/
+
+# Locally stored "Eclipse launch configurations"
+*.launch
+
+# CDT-specific
+.cproject
+
+# PDT-specific
+.buildpathk
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# IntelliJ IDE files.
+.idea/
+atlassian-ide-plugin.xml
+
+# XHProf profiles.
+xhprof_*
+
+# Sass files.
+.sass-cache
+
+# Sourcemaps.
+*.css.map
+*.js.map
+
+# Netbeans IDE files.
+nbproject
+
+# Visual Studio (Code) IDE files.
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# DrupalVM files.
+.vagrant/
+
+# DevDesktop files.
+*.dd
+
+# Exports.
+*.gz
+*.sql
+*.zip
+
+# NPM files.
+npm-debug.log
+
+# Drush 9 Checksums
+/drush/sites/.checksums
+
+# Deprecation detector rules.
+.rules
+prototypes/n.html
+/.gitattributes
+
+# Lando config files
+.lando.php.ini
+.lando.yml
