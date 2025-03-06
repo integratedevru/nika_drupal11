@@ -1,7 +1,7 @@
 services:
   mariadb:
     image: wodby/mariadb:$MARIADB_TAG
-    container_name: "${PROJECT_NAME}_mariadb"
+    container_name: mariadb
     stop_grace_period: 30s
     environment:
       MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
@@ -17,7 +17,7 @@ services:
 
   php:
     image: wodby/drupal-php:$PHP_TAG
-    container_name: "${PROJECT_NAME}_php"
+    container_name: php
     environment:
       # By default xdebug extension also disabled.
       PHP_EXTENSIONS_DISABLE: xhprof,spx
@@ -60,7 +60,7 @@ services:
   crond:
     init: true
     image: wodby/drupal-php:$PHP_TAG
-    container_name: "${PROJECT_NAME}_crond"
+    container_name: crond
     environment:
       CRONTAB: "0 * * * * drush -r /var/www/html/web cron"
     command: sudo -E crond -f -d 0
@@ -72,7 +72,7 @@ services:
 
   nginx:
     image: wodby/nginx:$NGINX_TAG
-    container_name: "${PROJECT_NAME}_nginx"
+    container_name: nginx
     depends_on:
     - php
     ports:
