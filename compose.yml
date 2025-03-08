@@ -51,8 +51,6 @@ services:
     - "host.docker.internal:host-gateway"
     volumes:
     - ./:/var/www/html:cached
-    - drupal_files:/var/www/html/web/sites/default/files
-    - drupal_settings:/var/www/html/web/sites/default
 ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
 #    - drupal:/var/www/html
 ## For XHProf and Xdebug profiler traces
@@ -67,8 +65,6 @@ services:
     command: sudo -E crond -f -d 0
     volumes:
     - ./:/var/www/html:cached
-    - drupal_files:/var/www/html/web/sites/default/files
-    - drupal_settings:/var/www/html/web/sites/default
 ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
 #    - drupal:/var/www/html
 
@@ -88,8 +84,6 @@ services:
     #      NGINX_DRUPAL_FILE_PROXY_URL: http://example.com
     volumes:
     - ./:/var/www/html:cached
-    - drupal_files:/var/www/html/web/sites/default/files
-    - drupal_settings:/var/www/html/web/sites/default
 ## Alternative for macOS users: Mutagen https://wodby.com/docs/stacks/drupal/local#docker-for-mac
 #    - drupal:/var/www/html
 
@@ -282,8 +276,6 @@ volumes:
   # Add persistent volumes
   mariadb_data:
     driver: local
-  drupal_files:
-  drupal_settings:
 
 #x-mutagen:
 #  sync:
