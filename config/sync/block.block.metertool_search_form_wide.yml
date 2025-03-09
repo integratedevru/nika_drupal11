@@ -1,0 +1,23 @@
+uuid: 1f745116-752f-4a6d-a923-afe2984d6616
+langcode: en
+status: true
+dependencies:
+  module:
+    - search
+  theme:
+    - metertool
+_core:
+  default_config_hash: imMyHD6LYci0gtXq56qr9ZKGHzbEG9uFydrN5EhKtSU
+id: metertool_search_form_wide
+theme: metertool
+region: secondary_menu
+weight: -5
+provider: null
+plugin: search_form_block
+settings:
+  id: search_form_block
+  label: 'Search form (wide)'
+  label_display: '0'
+  provider: search
+  page_id: ''
+visibility: {  }

@@ -1,0 +1,22 @@
+uuid: b7f6e493-ed71-49e3-920f-b489efcca6ed
+langcode: en
+status: true
+dependencies:
+  module:
+    - help
+  theme:
+    - metertool
+_core:
+  default_config_hash: VfPFqqxfkomud5CO8DUijw85QIl9GIxh_nIxLOYESxg
+id: metertool_help
+theme: metertool
+region: header
+weight: 0
+provider: null
+plugin: help_block
+settings:
+  id: help_block
+  label: Help
+  label_display: '0'
+  provider: help
+visibility: {  }

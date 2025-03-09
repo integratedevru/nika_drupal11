@@ -286,7 +286,7 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = '';
+$settings['hash_salt'] = 'MJ4cdEm6b5PYK9se';
 
 /**
  * Deployment identifier.
@@ -872,9 +872,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 
-$settings['trusted_host_patterns'] = array(
-    '\.localhost$', '\.local$', '\.loc$'
-);$databases['default']['default'] = [
+$settings['config_sync_directory'] = '../config/sync';
+$settings['hash_salt'] = 'MJ4cdEm6b5PYK9se';
+
+$databases['default']['default'] = [
     'host' => 'mariadb',
     'database' => 'drupal',
     'username' => 'drupal',
@@ -883,12 +884,14 @@ $settings['trusted_host_patterns'] = array(
     'prefix' => '',
 ];
 
-$settings['config_sync_directory'] = '../config/sync';
-$settings['hash_salt'] = 'MJ4cdEm6b5PYK9se';
-
 $settings['trusted_host_patterns'] = array(
-    '^37\.143\.10\.49$',   // The server IP
-    '^localhost$',         // localhost
-    '^127\.0\.0\.1$',      // 127.0.0.1
-    '^192\.168\.1\.100$', // Your local network IP
+    '^37\.143\.10\.49$',           // The server IP
+    '^localhost$',                 // localhost
+    '^127\.0\.0\.1$',              // 127.0.0.1
+    '^192\.168\.1\.100$',          // Your local network IP
+    '^drupal\.docker\.localhost$', // Docker hostname
+    '^drupal\.docker\.localhost:8000$', // With port number
+    '\.localhost$',                // Any *.localhost domain
+    '\.local$',                    // Any *.local domain
+    '\.loc$',                      // Any *.loc domain
 );

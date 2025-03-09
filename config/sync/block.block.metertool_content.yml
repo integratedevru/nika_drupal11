@@ -1,0 +1,22 @@
+uuid: 0e914c68-2eca-4e08-b0ad-9cc8d4417df0
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - metertool
+_core:
+  default_config_hash: erQSEZF2XUjNmgTl0uNRBzmg18ZGXwUcw2FhApoeuHk
+id: metertool_content
+theme: metertool
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: 'Main page content'
+  label_display: '0'
+  provider: system
+visibility: {  }

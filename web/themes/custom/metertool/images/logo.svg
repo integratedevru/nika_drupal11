@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 80" width="240" height="80">
+  <rect x="10" y="10" width="60" height="60" rx="5" fill="#006699" />
+  <circle cx="40" cy="40" r="20" fill="white"/>
+  <circle cx="40" cy="40" r="15" fill="none" stroke="#006699" stroke-width="2"/>
+  <line x1="40" y1="25" x2="40" y2="40" stroke="#006699" stroke-width="3" stroke-linecap="round"/>
+  <line x1="40" y1="40" x2="50" y2="40" stroke="#006699" stroke-width="3" stroke-linecap="round"/>
+  <text x="80" y="50" font-family="Arial, sans-serif" font-weight="bold" font-size="24" fill="#006699">MeterTool</text>
+</svg> 

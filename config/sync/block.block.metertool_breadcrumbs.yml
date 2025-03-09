@@ -1,0 +1,22 @@
+uuid: 2c36c24d-ecc3-4c75-8168-a469c586e1f6
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - metertool
+_core:
+  default_config_hash: VhBzWb7lMRtIOg9G7VSw_0uopi-7zXeHq4vXqqV1HFE
+id: metertool_breadcrumbs
+theme: metertool
+region: breadcrumb
+weight: 0
+provider: null
+plugin: system_breadcrumb_block
+settings:
+  id: system_breadcrumb_block
+  label: Breadcrumbs
+  label_display: '0'
+  provider: system
+visibility: {  }
