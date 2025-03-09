@@ -155,7 +155,7 @@ services:
 #    labels:
 #    - "traefik.http.routers.${PROJECT_NAME}_adminer.rule=Host(`adminer.${PROJECT_BASE_URL}`)"
 
- pma:
+  pma:
    image: phpmyadmin/phpmyadmin
    container_name: pma
    environment:
@@ -163,6 +163,8 @@ services:
      PMA_USER: $DB_USER
      PMA_PASSWORD: $DB_PASSWORD
      UPLOAD_LIMIT: 1G
+   ports:
+     - "8080:80"  # Add port mapping to access phpMyAdmin
 #    labels:
 #    - "traefik.http.routers.${PROJECT_NAME}_pma.rule=Host(`pma.${PROJECT_BASE_URL}`)"
 
