@@ -7,4 +7,5 @@ global-styling:
     js/metertool.js: {}
   dependencies:
     - core/drupal
-    - core/jquery 
+    - core/jquery
+    - core/once 

@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Contains home_page.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function home_page_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    case 'help.page.home_page':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Manage Home Page content with two text fields and an image field.') . '</p>';
+      return $output;
+  }
+} 

@@ -1,0 +1,211 @@
+/**
+ * @file
+ * Layout styles for the MeterTool theme.
+ */
+
+// Base layout
+body {
+  background-image: none;
+}
+
+// Site structure
+.site {
+  &-wrapper {
+    width: 100%;
+    overflow-x: hidden;
+  }
+  
+  // Header
+  &-header {
+    .layout-container {
+      position: relative;
+      z-index: 2;
+    }
+    
+    @media (max-width: 768px) {
+      padding: 0;
+      
+      &::after {
+        height: 70px;
+      }
+    }
+  }
+  
+  // Footer
+  &-footer {
+    background-color: @dark-gray;
+    color: white;
+    padding: @padding-default * 2 0;
+    margin-top: @margin-default * 2;
+    
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .copyright {
+      font-size: 0.9em;
+      margin-top: @margin-default;
+      text-align: center;
+    }
+  }
+}
+
+// Header top section
+.header-top {
+  position: relative;
+  padding-top: @padding-default*2;
+  border-bottom: none;
+  
+  @media (max-width: 768px) {
+    padding-top: 0.5rem;
+  }
+}
+
+// Main layout container
+.layout-container {
+  max-width: @max-width;
+  margin: 0 auto;
+  padding: 0 @padding-default;
+}
+
+// Header inner layout
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  border-bottom: none;
+  
+  // Create a left group for logo and primary navigation
+  .left-group {
+    display: flex;
+    align-items: center;
+    gap: @padding-default;
+    
+    @media (max-width: 768px) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+// Branding and navigation
+.branding {
+  display: flex;
+  align-items: center;
+  
+  .logo {
+    max-height: 30px;
+    width: auto;
+  }
+}
+
+// Navigation
+.primary-nav, 
+.secondary-nav {
+  display: flex;
+  align-items: center;
+  
+  ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: @padding-default * 1.5;
+    
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+  }
+  
+  li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+}
+
+// User menu
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: @padding-default * 1.5;
+  
+  a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: opacity 0.2s ease;
+    
+    &:hover {
+      opacity: 0.8;
+      text-decoration: none;
+    }
+  }
+}
+
+// Content layout
+.main-content {
+  margin: @margin-default * 2 0 @margin-default 0;
+}
+
+.content-wrapper {
+  display: flex;
+  gap: @padding-default * 2;
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: @padding-default;
+  }
+}
+
+// Content area and sidebars
+.main-content-area {
+  flex: 3;
+  
+  .has-both-sidebars & {
+    flex: 2;
+  }
+  
+  .has-one-sidebar & {
+    flex: 3;
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    flex: none;
+  }
+}
+
+.sidebar {
+  flex: 1;
+  
+  &-first {
+    // Specific styles for first sidebar if needed
+  }
+  
+  &-second {
+    // Specific styles for second sidebar if needed
+  }
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    flex: none;
+  }
+}

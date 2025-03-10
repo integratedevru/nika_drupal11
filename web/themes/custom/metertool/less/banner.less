@@ -1,0 +1,129 @@
+/**
+ * @file
+ * Banner component styles for the MeterTool theme.
+ */
+
+.banner {
+  &-wrapper {
+    position: relative;
+    margin-bottom: 0;
+    
+    &.full-width {
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  
+  background-image: url('../images/banner_back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: @white;
+  
+  // Gradient overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(0deg, @white 0.12%, rgba(21, 76, 89, 0.7) 35.71%, rgba(7, 130, 157, 0.7) 100%);
+    z-index: 1;
+  }
+  
+  &-content {
+    position: relative;
+    z-index: 3;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 200px 0 300px;
+    
+    @media (max-width: 768px) {
+      padding: 70px 0 100px;
+    }
+  }
+  
+  &-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: @margin-default;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    color: @white;
+    
+    @media (max-width: 768px) {
+      font-size: 2rem;
+    }
+  }
+  
+  &-description {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    margin-bottom: @margin-default * 2;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
+  }
+  
+  &-actions {
+    display: flex;
+    gap: @padding-default * 1.5;
+    margin-top: @margin-default * 2;
+    justify-content: center;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+  
+  // Arc decoration that spans across the header
+  .arc-decoration {
+    background-image: url('../images/ellipse.png');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 25%;
+    @media (max-width: 768px) {
+      top: 120px;
+      height: 200px;
+    }
+    .dot {
+      position: absolute;
+      top: 12px;
+      left: 38%;
+      width: 15px;
+      height: 15px;
+      background-color: @white;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+      @media screen and (max-width: 1640px) {
+        top: 4px;
+      }
+      @media screen and (max-width: 1024px) {
+        top: -1px;
+      }
+      @media (max-width: 768px) {
+        top: 3px;
+        width: 8px;
+        height: 8px;
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}

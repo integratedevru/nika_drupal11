@@ -53,4 +53,87 @@ The theme includes a custom `page.html.twig` template with enhanced styling for 
 ## Requirements
 
 - Drupal 9 or 10
-- Base theme: Claro 
+- Base theme: Claro
+
+## Theme Structure
+
+- `css/`: Compiled CSS files
+- `js/`: JavaScript files
+- `less/`: LESS source files
+- `templates/`: Twig templates
+- `images/`: Theme images
+
+## LESS Preprocessing
+
+This theme uses LESS for CSS preprocessing. The LESS files are organized in a modular structure:
+
+- `less/style.less`: Main LESS file that imports all other files
+- `less/variables.less`: Color, spacing, and other variables
+- `less/layout.less`: Layout and structure styles
+- `less/typography.less`: Text and font styles
+- `less/banner.less`: Banner component styles
+- `less/responsive.less`: Mobile and responsive styles
+
+### Compiling LESS to CSS
+
+To compile LESS files to CSS, you can use one of the following methods:
+
+#### Using npm scripts (requires Node.js)
+
+```bash
+# Navigate to the theme directory
+cd web/themes/custom/metertool
+
+# Install dependencies
+npm install
+
+# Compile LESS to CSS once
+npm run build
+
+# Watch for changes and compile automatically
+npm run watch
+```
+
+#### Using global LESS compiler
+
+```bash
+# Navigate to the theme directory
+cd web/themes/custom/metertool
+
+# Compile LESS to CSS once
+lessc less/style.less css/style.css
+
+# Watch for changes and compile automatically
+less-watch-compiler less css style.less
+```
+
+## Development
+
+When making style changes, always edit the LESS files in the `less/` directory, not the compiled CSS files in the `css/` directory. The CSS files will be overwritten when the LESS files are compiled.
+
+## Drupal Libraries
+
+The theme's styles are included via the `global-styling` library defined in `metertool.libraries.yml`.
+
+## Design Consistency
+
+The theme implements the MeterTools 5 design with the following key components:
+
+1. **Header with Banner**:
+   - Blue navigation bar with logo, navigation menu, and user options
+   - Navigation menu with "Описание", "Скачать", "Преимущества", "Контакты"
+   - User menu with "Войти" and "Регистрация" options
+   - Banner section with gradient blue background and arc decoration
+   - Title "MeterTools 5" with descriptive paragraph
+   - "Скачать" (download) and "Связаться" (contact) buttons
+
+2. **Typography**:
+   - Clean, modern sans-serif fonts
+   - White text on blue backgrounds
+   - Appropriate sizing for different screen resolutions
+
+3. **Responsive Design**:
+   - Adapts to mobile, tablet, and desktop screens
+   - Maintains design consistency across devices
+
+The design follows the branding guidelines for MeterTools 5 application. 

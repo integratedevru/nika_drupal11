@@ -1,0 +1,10 @@
+name: Home Page
+type: module
+description: 'A simple module to manage Home Page content with text fields and file upload fields.'
+package: Custom
+core_version_requirement: ^8.8 || ^9 || ^10
+dependencies:
+  - drupal:file
+  - drupal:image
+  - drupal:media
+  - drupal:media_library 

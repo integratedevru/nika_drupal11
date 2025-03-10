@@ -1,0 +1,12 @@
+diff --git a/entity_browser.libraries.yml b/entity_browser.libraries.yml
+index b79fa9f..bb61932 100644
+--- a/entity_browser.libraries.yml
++++ b/entity_browser.libraries.yml
+@@ -3,6 +3,7 @@ common:
+   js:
+     js/entity_browser.common.js: {}
+   dependencies:
++    - core/internal.underscore
+     - core/drupal.dialog.ajax
+ 
+ pager:

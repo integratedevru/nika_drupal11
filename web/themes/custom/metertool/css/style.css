@@ -2,158 +2,436 @@
  * @file
  * Main stylesheet for MeterTool theme.
  */
-
-:root {
-  --primary-color: #006699;
-  --secondary-color: #004466;
-  --light-gray: #f5f5f5;
-  --dark-gray: #333333;
-  --text-color: #2a2a2a;
-  --link-color: #0077cc;
-  --link-hover-color: #005599;
-  --padding-default: 1rem;
-  --margin-default: 1rem;
-  --border-radius: 4px;
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCs16Ew-.ttf) format('truetype');
 }
-
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtr6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCtZ6Ew-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu170w-.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/montserrat/v29/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCuM70w-.ttf) format('truetype');
+}
+/**
+ * @file
+ * Variables for the MeterTool theme.
+ */
+/**
+ * @file
+ * Layout styles for the MeterTool theme.
+ */
 body {
-  font-family: 'Roboto', Arial, sans-serif;
-  color: var(--text-color);
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
-  background-color: var(--light-gray);
+  background-image: none;
 }
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
+.site-wrapper {
+  width: 100%;
+  overflow-x: hidden;
 }
-
-a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+.site-header .layout-container {
+  position: relative;
+  z-index: 2;
 }
-
-.site-header {
-  background-color: var(--primary-color);
+@media (max-width: 768px) {
+  .site-header {
+    padding: 0;
+  }
+  .site-header::after {
+    height: 70px;
+  }
+}
+.site-footer {
+  background-color: #333333;
   color: white;
-  padding: var(--padding-default);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 2rem 0;
+  margin-top: 2rem;
 }
-
-.header-inner {
+.site-footer .footer-inner {
   display: flex;
-  align-items: center;
   justify-content: space-between;
 }
-
-.branding {
-  margin-right: var(--margin-default);
+.site-footer .copyright {
+  font-size: 0.9em;
+  margin-top: 1rem;
+  text-align: center;
 }
-
-.logo {
-  max-height: 60px;
-  width: auto;
+.header-top {
+  position: relative;
+  padding-top: 2rem;
+  border-bottom: none;
 }
-
-.primary-nav, .secondary-nav {
-  margin-top: var(--margin-default);
+@media (max-width: 768px) {
+  .header-top {
+    padding-top: 0.5rem;
+  }
 }
-
-.primary-nav ul, .secondary-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.layout-container {
+  max-width: 1720px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.header-inner {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.8rem;
+  border-bottom: none;
+}
+.header-inner .left-group {
+  display: flex;
+  align-items: center;
   gap: 1rem;
 }
-
-.primary-nav a, .secondary-nav a {
+@media (max-width: 768px) {
+  .header-inner .left-group {
+    width: 100%;
+    justify-content: center;
+  }
+}
+@media (max-width: 768px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+}
+.branding {
+  display: flex;
+  align-items: center;
+}
+.branding .logo {
+  max-height: 30px;
+  width: auto;
+}
+.primary-nav,
+.secondary-nav {
+  display: flex;
+  align-items: center;
+}
+.primary-nav ul,
+.secondary-nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 1.5rem;
+}
+@media (max-width: 768px) {
+  .primary-nav ul,
+  .secondary-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+.primary-nav li a,
+.secondary-nav li a {
   color: white;
+  text-decoration: none;
   font-weight: 500;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
 }
-
-.breadcrumb-container {
-  background-color: white;
-  padding: 0.5rem var(--padding-default);
-  border-bottom: 1px solid #e0e0e0;
+.primary-nav li a:hover,
+.secondary-nav li a:hover {
+  opacity: 0.8;
+  text-decoration: none;
 }
-
-.site-footer {
-  background-color: var(--dark-gray);
+.user-menu {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.user-menu a {
   color: white;
-  padding: var(--padding-default);
-  margin-top: var(--margin-default);
+  text-decoration: none;
+  font-size: 14px;
+  transition: opacity 0.2s ease;
 }
-
-.footer-inner {
-  margin-bottom: var(--margin-default);
+.user-menu a:hover {
+  opacity: 0.8;
+  text-decoration: none;
 }
-
-.copyright {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: var(--padding-default);
-  font-size: 0.9rem;
-}
-
-.page-title {
-  color: var(--primary-color);
-  margin-bottom: var(--margin-default);
-}
-
-.layout-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 .main-content {
-  padding: var(--padding-default);
-  background-color: white;
-  border-radius: var(--border-radius);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  margin-top: var(--margin-default);
+  margin: 2rem 0 1rem 0;
 }
-
 .content-wrapper {
   display: flex;
-  flex-wrap: wrap;
-  gap: var(--margin-default);
+  gap: 2rem;
 }
-
-.main-content-area {
-  flex: 1 0 70%;
-}
-
-.sidebar {
-  flex: 0 0 25%;
-}
-
-.has-both-sidebars {
-  flex: 1 0 50%;
-}
-
-.has-one-sidebar {
-  flex: 1 0 70%;
-}
-
-/* Responsive design */
 @media (max-width: 768px) {
   .content-wrapper {
     flex-direction: column;
+    gap: 1rem;
   }
-  
-  .main-content-area, .sidebar {
-    flex: 1 0 100%;
+}
+.main-content-area {
+  flex: 3;
+}
+.has-both-sidebars .main-content-area {
+  flex: 2;
+}
+.has-one-sidebar .main-content-area {
+  flex: 3;
+}
+@media (max-width: 768px) {
+  .main-content-area {
+    width: 100%;
+    flex: none;
   }
-  
-  .header-inner {
+}
+.sidebar {
+  flex: 1;
+}
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    flex: none;
+  }
+}
+/**
+ * @file
+ * Typography styles for the MeterTool theme.
+ */
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #2a2a2a;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: #0077cc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+a:hover {
+  color: #005599;
+  text-decoration: underline;
+}
+.page-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #32CBED;
+}
+/**
+ * @file
+ * Banner component styles for the MeterTool theme.
+ */
+.banner {
+  background-image: url('../images/banner_back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+.banner-wrapper {
+  position: relative;
+  margin-bottom: 0;
+}
+.banner-wrapper.full-width {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+.banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(0deg, #FFFFFF 0.12%, rgba(21, 76, 89, 0.7) 35.71%, rgba(7, 130, 157, 0.7) 100%);
+  z-index: 1;
+}
+.banner-content {
+  position: relative;
+  z-index: 3;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 200px 0 300px;
+}
+@media (max-width: 768px) {
+  .banner-content {
+    padding: 70px 0 100px;
+  }
+}
+.banner-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: #FFFFFF;
+}
+@media (max-width: 768px) {
+  .banner-title {
+    font-size: 2rem;
+  }
+}
+.banner-description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .banner-description {
+    font-size: 1rem;
+  }
+}
+.banner-actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .banner-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 1rem;
   }
-  
-  .primary-nav ul, .secondary-nav ul {
-    flex-direction: column;
+}
+.banner .arc-decoration {
+  background-image: url('../images/ellipse.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 25%;
+}
+@media (max-width: 768px) {
+  .banner .arc-decoration {
+    top: 120px;
+    height: 200px;
   }
-} 
+}
+.banner .arc-decoration .dot {
+  position: absolute;
+  top: 12px;
+  left: 38%;
+  width: 15px;
+  height: 15px;
+  background-color: #FFFFFF;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+}
+@media screen and (max-width: 1640px) {
+  .banner .arc-decoration .dot {
+    top: 4px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .banner .arc-decoration .dot {
+    top: -1px;
+  }
+}
+@media (max-width: 768px) {
+  .banner .arc-decoration .dot {
+    top: 3px;
+    width: 8px;
+    height: 8px;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  }
+}
+/**
+ * @file
+ * Miscellaneous UI component styles for the MeterTool theme.
+ */
+.banner-button {
+  padding: 0.55rem 2rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 30px;
+  min-width: 215px;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+}
+@media (max-width: 768px) {
+  .banner-button {
+    width: 100%;
+    max-width: 215px;
+  }
+}
+.banner-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+}
+.banner-button.primary-button {
+  background-color: #32CBED;
+  color: #FFFFFF;
+  border: none;
+}
+.banner-button.primary-button:hover {
+  background-color: #004466;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.banner-button.secondary-button {
+  background-color: transparent;
+  backdrop-filter: blur(5px);
+  color: #32CBED;
+  border: 1px solid #32CBED;
+}
+.banner-button.secondary-button:hover {
+  background-color: rgba(0, 102, 153, 0.1);
+  color: #32CBED;
+  text-decoration: none;
+}
+.icon.download-icon {
+  margin-left: 8px;
+  width: 20px;
+  height: 20px;
+  background-image: url('../images/download.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+/**
+ * @file
+ * Global responsive styles for the MeterTool theme.
+ * 
+ * Note: Most responsive styles have been moved into their 
+ * respective component files. This file should only contain
+ * global responsive styles that don't belong to any specific component.
+ */

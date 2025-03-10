@@ -1,0 +1,19 @@
+{
+  "name": "metertool",
+  "version": "1.0.0",
+  "description": "A custom Drupal theme for the MeterTool application.",
+  "main": "index.js",
+  "scripts": {
+    "less": "lessc less/style.less css/style.css",
+    "watch": "node watch-less.js",
+    "build": "npm run less",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^4.2.2",
+    "less-watch-compiler": "^1.16.3"
+  }
+}

@@ -1,0 +1,26 @@
+uuid: 4c2fd97d-b2d9-43fd-b48b-b97026f36749
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.software.field_software_format
+    - field.field.node.software.field_software_release_date
+    - field.field.node.software.field_software_type
+    - node.type.software
+  module:
+    - user
+id: node.software.teaser
+targetEntityType: node
+bundle: software
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_software_format: true
+  field_software_release_date: true
+  field_software_type: true

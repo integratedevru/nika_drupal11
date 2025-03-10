@@ -2,7 +2,7 @@
  * @file
  * JavaScript behaviors for the MeterTool theme.
  */
-(function (Drupal, $) {
+(function (Drupal, $, once) {
   'use strict';
 
   /**
@@ -11,25 +11,27 @@
   Drupal.behaviors.meterToolTheme = {
     attach: function (context, settings) {
       // Smooth scrolling for anchor links
-      $('a[href*="#"]:not([href="#"])', context).once('smooth-scroll').on('click', function() {
-        if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
-          let target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
-          if (target.length) {
-            $('html, body').animate({
-              scrollTop: target.offset().top - 100
-            }, 1000);
-            return false;
+      once('smooth-scroll', 'a[href*="#"]:not([href="#"])', context).forEach(function (element) {
+        $(element).on('click', function() {
+          if (location.pathname.replace(/^\//, '') === this.pathname.replace(/^\//, '') && location.hostname === this.hostname) {
+            let target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+            if (target.length) {
+              $('html, body').animate({
+                scrollTop: target.offset().top - 100
+              }, 1000);
+              return false;
+            }
           }
-        }
+        });
       });
 
       // Add responsive table classes
-      $('table', context).once('responsive-table').each(function () {
-        $(this).addClass('responsive-table');
-        $(this).wrap('<div class="table-responsive"></div>');
+      once('responsive-table', 'table', context).forEach(function (table) {
+        $(table).addClass('responsive-table');
+        $(table).wrap('<div class="table-responsive"></div>');
       });
     }
   };
 
-})(Drupal, jQuery); 
+})(Drupal, jQuery, once); 

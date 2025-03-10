@@ -44,85 +44,86 @@
  * @ingroup themeable
  */
 #}
-<div class="layout-container">
+<div class="site-wrapper">
 
-  <header role="banner" class="site-header">
-    <div class="header-inner">
-      <div class="branding">
-        <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home">
-          <img src="{{ base_path ~ directory }}/images/logo.svg" alt="{{ 'MeterTool Logo'|t }}" class="logo">
-        </a>
+  {# Main Header with Navigation #}
+  <header role="banner" class="site-header banner">
+    <div class="layout-container">
+      <div class="header-top">
+        <div class="header-inner">
+          <div class="left-group">
+            <div class="branding">
+              <a href="{{ front_page }}" title="{{ 'Home'|t }}" rel="home" class="logo">
+                <img src="{{ base_path ~ directory }}/images/logo.svg" alt="{{ 'Home'|t }}" />
+              </a>
+            </div>
+            
+            <nav class="primary-nav">
+              <ul>
+                <li><a href="#">Описание</a></li>
+                <li><a href="#">Скачать</a></li>
+                <li><a href="#">Преимущества</a></li>
+                <li><a href="#">Контакты</a></li>
+              </ul>
+            </nav>
+          </div>
+          
+          <div class="user-menu">
+            <a href="#">Войти</a>
+            <a href="#">Регистрация</a>
+          </div>
+        </div>
+      </div>
+    
+      <div class="arc-decoration">
+        <div class="dot"></div>
       </div>
       
-      {% if page.header %}
-        <div class="header-content">
-          {{ page.header }}
+      <div class="banner-content">
+        <h1 class="banner-title">MeterTools 5</h1>
+        <div class="banner-description">
+          <p>Программа для чтения данных и настройки приборов учёта, устройств сбора и передачи данных, а также выполнения задач пусконаладки</p>
         </div>
-      {% endif %}
+        <div class="banner-actions">
+          <a href="#" class="banner-button primary-button">Скачать<span class="icon download-icon"></span></a>
+          <a href="#" class="banner-button secondary-button">Связаться</a>
+        </div>
+      </div>
     </div>
-    
-    {% if page.primary_menu %}
-      <nav class="primary-nav">
-        {{ page.primary_menu }}
-      </nav>
-    {% endif %}
-    
-    {% if page.secondary_menu %}
-      <nav class="secondary-nav">
-        {{ page.secondary_menu }}
-      </nav>
-    {% endif %}
   </header>
 
-  {% if page.breadcrumb %}
-    <div class="breadcrumb-container">
-      {{ page.breadcrumb }}
-    </div>
-  {% endif %}
+  <div class="layout-container">
+    <main role="main" class="main-content">
+      <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-  {% if page.highlighted %}
-    <div class="highlighted">
-      {{ page.highlighted }}
-    </div>
-  {% endif %}
+      <div class="content-wrapper">
+        {% if page.sidebar_first %}
+          <aside class="sidebar sidebar-first" role="complementary">
+            {{ page.sidebar_first }}
+          </aside>
+        {% endif %}
 
-  {% if page.help %}
-    <div class="help">
-      {{ page.help }}
-    </div>
-  {% endif %}
+        <div class="main-content-area{% if page.sidebar_first and page.sidebar_second %} has-both-sidebars{% elseif page.sidebar_first or page.sidebar_second %} has-one-sidebar{% endif %}">
+          {{ page.content }}
+        </div>
 
-  <main role="main" class="main-content">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
-
-    <div class="content-wrapper">
-      {% if page.sidebar_first %}
-        <aside class="sidebar sidebar-first" role="complementary">
-          {{ page.sidebar_first }}
-        </aside>
-      {% endif %}
-
-      <div class="main-content-area{% if page.sidebar_first and page.sidebar_second %} has-both-sidebars{% elseif page.sidebar_first or page.sidebar_second %} has-one-sidebar{% endif %}">
-        {{ page.content }}
+        {% if page.sidebar_second %}
+          <aside class="sidebar sidebar-second" role="complementary">
+            {{ page.sidebar_second }}
+          </aside>
+        {% endif %}
       </div>
+    </main>
 
-      {% if page.sidebar_second %}
-        <aside class="sidebar sidebar-second" role="complementary">
-          {{ page.sidebar_second }}
-        </aside>
-      {% endif %}
-    </div>
-  </main>
-
-  {% if page.footer %}
-    <footer role="contentinfo" class="site-footer">
-      <div class="footer-inner">
-        {{ page.footer }}
-      </div>
-      <div class="copyright">
-        &copy; {{ 'now'|date('Y') }} MeterTool. {{ 'All rights reserved.'|t }}
-      </div>
-    </footer>
-  {% endif %}
-
-</div>{# /.layout-container #} 
+    {% if page.footer %}
+      <footer role="contentinfo" class="site-footer">
+        <div class="footer-inner">
+          {{ page.footer }}
+        </div>
+        <div class="copyright">
+          &copy; {{ 'now'|date('Y') }} MeterTool. {{ 'All rights reserved.'|t }}
+        </div>
+      </footer>
+    {% endif %}
+  </div>
+</div> 

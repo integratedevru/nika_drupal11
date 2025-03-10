@@ -1,0 +1,19 @@
+uuid: 035b7bf6-a0ad-4b5c-b9f3-f32337f65d15
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_software_format
+    - node.type.software
+id: node.software.field_software_format
+field_name: field_software_format
+entity_type: node
+bundle: software
+label: 'Software format'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

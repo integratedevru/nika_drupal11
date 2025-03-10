@@ -1,0 +1,21 @@
+uuid: 284ed7b7-0507-418f-9738-5791661e63c9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_software_release_date
+    - node.type.software
+  module:
+    - datetime
+id: node.software.field_software_release_date
+field_name: field_software_release_date
+entity_type: node
+bundle: software
+label: 'Software release date'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

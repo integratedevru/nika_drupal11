@@ -1,0 +1,7 @@
+home_page.form:
+  path: '/admin/content/home-page'
+  defaults:
+    _form: '\Drupal\home_page\Form\HomePageForm'
+    _title: 'Home Page Content'
+  requirements:
+    _permission: 'administer site configuration' 

@@ -1,0 +1,33 @@
+/**
+ * @file
+ * Typography styles for the MeterTool theme.
+ */
+
+// Base typography
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: @text-color;
+  margin: 0;
+  padding: 0;
+}
+
+// Links
+a {
+  color: @link-color;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  
+  &:hover {
+    color: @link-hover-color;
+    text-decoration: underline;
+  }
+}
+
+// Headings
+.page-title {
+  font-size: 2rem;
+  margin-bottom: @margin-default * 1.5;
+  color: @primary-color;
+}

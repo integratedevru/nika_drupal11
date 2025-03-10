@@ -1,0 +1,21 @@
+uuid: 270dc228-c377-408e-827a-e5b19590a56e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_software_type
+    - node.type.software
+  module:
+    - options
+id: node.software.field_software_type
+field_name: field_software_type
+entity_type: node
+bundle: software
+label: 'Software type'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

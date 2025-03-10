@@ -1,0 +1,6 @@
+home_page.form:
+  title: 'Home Page'
+  description: 'Manage Home Page content.'
+  parent: system.admin_content
+  route_name: home_page.form
+  weight: 10 

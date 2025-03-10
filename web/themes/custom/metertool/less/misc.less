@@ -1,0 +1,63 @@
+/**
+ * @file
+ * Miscellaneous UI component styles for the MeterTool theme.
+ */
+
+// Button styles
+.banner-button {
+  padding: @padding-default * 0.55 @padding-default * 2;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 30px;
+  min-width: 215px;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  font-size: 1rem;
+  
+  @media (max-width: 768px) {
+    width: 100%;
+    max-width: 215px;
+  }
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+  }
+  
+  &.primary-button {
+    background-color: @primary-color;
+    color: @white;
+    border: none;
+    &:hover {
+        background-color: @secondary-color;
+        color: @white;
+        text-decoration: none;
+    }
+  }
+  
+  &.secondary-button {
+    background-color: @transparent;
+    backdrop-filter: blur(5px);
+    color: @primary-color;
+    border: 1px solid @primary-color;
+    &:hover {
+        background-color: rgba(0, 102, 153, 0.1);
+        color: @primary-color;
+        text-decoration: none;
+    }
+  }
+}
+
+.icon.download-icon {
+  margin-left: 8px;
+  width: 20px;
+  height: 20px;
+  background-image: url('../images/download.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+} 

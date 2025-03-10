@@ -1,0 +1,7 @@
+{
+  "watchFolder": "/var/www/html/drupal/web/themes/custom/metertool/less",
+  "outputFolder": "/var/www/html/drupal/web/themes/custom/metertool/css",
+  "mainFile": "style.less",
+  "includeHidden": false,
+  "sourceMap": true
+} 

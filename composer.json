@@ -18,16 +18,19 @@
         "composer/installers": "^2.0",
         "drupal/admin_toolbar": "^3.5",
         "drupal/backup_migrate": "^5.1",
+        "drupal/coffee": "^2.0",
         "drupal/core-composer-scaffold": "^10.4",
         "drupal/core-project-message": "^10.4",
         "drupal/core-recommended": "^10.4",
+        "drupal/entity_browser": "^2.13",
+        "drupal/media_entity_browser": "^3.0",
         "drupal/slick": "^3.0",
         "drush/drush": "^13.3"
     },
     "conflict": {
         "drupal/drupal": "*"
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
@@ -36,9 +39,13 @@
             "drupal/core-project-message": true,
             "phpstan/extension-installer": true,
             "dealerdirect/phpcodesniffer-composer-installer": true,
-            "php-http/discovery": true
+            "php-http/discovery": true,
+            "cweagans/composer-patches": true
         },
         "sort-packages": true
+    },
+    "require-dev": {
+        "cweagans/composer-patches": "^1.7"
     },
     "extra": {
         "drupal-scaffold": {
@@ -75,6 +82,12 @@
                 "type:drupal-custom-theme"
             ]
         },
+        "patches": {
+            "drupal/entity_browser": {
+                "Fix entity browser errors in Drupal 10 - Issue #3440973": "https://git.drupalcode.org/project/entity_browser/-/merge_requests/30.diff",
+                "Fix entity browser errors": "https://www.drupal.org/files/issues/2024-06-12/2914385-35.patch"
+            }
+        },
         "drupal-core-project-message": {
             "include-keys": [
                 "homepage",
@@ -82,7 +95,7 @@
             ],
             "post-create-project-cmd-message": [
                 "<bg=blue;fg=white>                                                         </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the Drupal codebase  </>",
+                "<bg=blue;fg=white>  Congratulations, you've installed the Drupal codebase  </>",
                 "<bg=blue;fg=white>  from the drupal/recommended-project template!          </>",
                 "<bg=blue;fg=white>                                                         </>",
                 "",

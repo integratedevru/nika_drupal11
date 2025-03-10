@@ -1,0 +1,14 @@
+diff --git a/src/Plugin/EntityBrowser/Widget/View.php b/src/Plugin/EntityBrowser/Widget/View.php
+index 51b7ba2..db2fb96 100644
+--- a/src/Plugin/EntityBrowser/Widget/View.php
++++ b/src/Plugin/EntityBrowser/Widget/View.php
+@@ -218,6 +218,9 @@ class View extends WidgetBase implements ContainerFactoryPluginInterface {
+    * {@inheritdoc}
+    */
+   protected function prepareEntities(array $form, FormStateInterface $form_state) {
++    if (!isset($form_state->getUserInput()['entity_browser_select'])) {
++      return [];
++    }
+     if (is_array($form_state->getUserInput()['entity_browser_select'])) {
+       $selected_rows = array_values(array_filter($form_state->getUserInput()['entity_browser_select']));
+     }
