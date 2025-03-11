@@ -5,6 +5,7 @@ global-styling:
       css/style.css: {}
   js:
     js/metertool.js: {}
+    js/features.js: {}
   dependencies:
     - core/drupal
     - core/jquery

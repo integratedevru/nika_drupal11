@@ -52,6 +52,7 @@
         "drupal/slick_extras": "^2.0",
         "drupal/slick_lightbox": "^2.0",
         "drupal/slick_views": "^3.0",
+        "drupal/twig_tweak": "^3.4",
         "drush/drush": "^13.3",
         "kenwheeler/slick": "1.6.0",
         "mreq/slick-lightbox": "0.2.12"
