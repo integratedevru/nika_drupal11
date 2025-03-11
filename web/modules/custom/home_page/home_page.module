@@ -6,6 +6,8 @@
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\file\Entity\File;
+use Drupal\Core\Url;
 
 /**
  * Implements hook_help().
@@ -15,7 +17,49 @@ function home_page_help($route_name, RouteMatchInterface $route_match) {
     case 'help.page.home_page':
       $output = '';
       $output .= '<h3>' . t('About') . '</h3>';
-      $output .= '<p>' . t('Manage Home Page content with two text fields and an image field.') . '</p>';
+      $output .= '<p>' . t('A simple module to manage Home Page content with text fields and file upload fields.') . '</p>';
       return $output;
+  }
+}
+
+/**
+ * Implements hook_preprocess_page().
+ */
+function home_page_preprocess_page(&$variables) {
+  // Only add variables to the front page.
+  $is_front = \Drupal::service('path.matcher')->isFrontPage();
+  
+  if ($is_front) {
+    $state = \Drupal::state();
+    
+    // Get title and banner description.
+    $variables['home_page_title'] = $state->get('home_page.title', '');
+    $variables['home_page_banner_description'] = $state->get('home_page.banner_description', '');
+    
+    // Get description with format.
+    $description_value = $state->get('home_page.description.value', '');
+    $description_format = $state->get('home_page.description.format', 'full_html');
+    
+    // Process the formatted text.
+    if (!empty($description_value)) {
+      $variables['home_page_description'] = check_markup($description_value, $description_format);
+    }
+    
+    // Process the image.
+    $image_fid = $state->get('home_page.image_fid', NULL);
+    $variables['home_page_image'] = NULL;
+    
+    if ($image_fid) {
+      $file = File::load($image_fid);
+      if ($file) {
+        $variables['home_page_image'] = [
+          '#theme' => 'image_style',
+          '#style_name' => 'large', // Use an existing image style
+          '#uri' => $file->getFileUri(),
+          '#alt' => $variables['home_page_title'],
+          '#attributes' => ['class' => ['home-page-image']],
+        ];
+      }
+    }
   }
 } 

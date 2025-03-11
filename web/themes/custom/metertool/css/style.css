@@ -47,6 +47,7 @@
  */
 body {
   background-image: none;
+  background-color: unset;
 }
 .site-wrapper {
   width: 100%;
@@ -426,6 +427,43 @@ a:hover {
   background-size: contain;
   background-repeat: no-repeat;
   display: inline-block;
+}
+.site-header {
+  border-block-end: unset;
+}
+.home-page-custom-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .home-page-custom-content {
+    justify-content: center;
+  }
+}
+.home-page-text {
+  max-width: 550px;
+  flex: 1 1 5500px;
+}
+.home-page-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 550px;
+}
+.home-page-image-wrapper img {
+  object-fit: contain;
+  width: 100%;
+  height: auto;
+}
+.under-banner-p {
+  display: flex;
+  gap: 10px;
+}
+.under-banner-p img {
+  width: 22px;
 }
 /**
  * @file

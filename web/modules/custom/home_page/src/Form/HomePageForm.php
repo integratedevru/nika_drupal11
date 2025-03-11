@@ -53,7 +53,8 @@ class HomePageForm extends FormBase {
     // Get values from state.
     $title = $this->state->get('home_page.title', '');
     $banner_description = $this->state->get('home_page.banner_description', '');
-    $description = $this->state->get('home_page.description', '');
+    $description_value = $this->state->get('home_page.description.value', '');
+    $description_format = $this->state->get('home_page.description.format', 'full_html');
     $media_fid = $this->state->get('home_page.media_fid', NULL);
     $image_fid = $this->state->get('home_page.image_fid', NULL);
 
@@ -75,21 +76,22 @@ class HomePageForm extends FormBase {
       '#rows' => 3,
     ];
 
-    // Description field.
+    // Description field as WYSIWYG.
     $form['description'] = [
-      '#type' => 'textarea',
+      '#type' => 'text_format',
       '#title' => $this->t('Under Banner Description'),
-      '#description' => $this->t('Enter the main page description.'),
-      '#default_value' => $description,
-      '#rows' => 5,
+      '#description' => $this->t('Enter the main page description with formatting.'),
+      '#default_value' => $description_value,
+      '#format' => $description_format,
+      '#rows' => 10,
     ];
 
     // Image file field.
     $form['image_file'] = [
       '#type' => 'managed_file',
       '#title' => $this->t('Under Banner Image'),
-      '#description' => $this->t('Upload an image for the banner (jpg, png, gif).'),
-      '#upload_location' => 'public://home-page/',
+      '#description' => $this->t('Upload an image for the under banner section (jpg, png, gif).'),
+      '#upload_location' => 'public://',
       '#upload_validators' => [
         'file_validate_extensions' => ['jpg jpeg png gif'],
         'file_validate_is_image' => [],
@@ -117,7 +119,11 @@ class HomePageForm extends FormBase {
     // Save values to state.
     $this->state->set('home_page.title', $form_state->getValue('title'));
     $this->state->set('home_page.banner_description', $form_state->getValue('banner_description'));
-    $this->state->set('home_page.description', $form_state->getValue('description'));
+    
+    // Handle description with format.
+    $description = $form_state->getValue('description');
+    $this->state->set('home_page.description.value', $description['value']);
+    $this->state->set('home_page.description.format', $description['format']);
     
     // Handle image file.
     $image_file = $form_state->getValue('image_file');

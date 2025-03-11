@@ -80,13 +80,23 @@
       </div>
       
       <div class="banner-content">
-        <h1 class="banner-title">MeterTools 5</h1>
+        {% if home_page_title %}
+          <h1 class="banner-title">{{ home_page_title }}</h1>
+        {% else %}
+          <h1 class="banner-title">MeterTools 5</h1>
+        {% endif %}
+        
         <div class="banner-description">
-          <p>Программа для чтения данных и настройки приборов учёта, устройств сбора и передачи данных, а также выполнения задач пусконаладки</p>
+          {% if home_page_banner_description %}
+            <p>{{ home_page_banner_description }}</p>
+          {% else %}
+            <p>Программа для чтения данных и настройки приборов учёта, устройств сбора и передачи данных, а также выполнения задач пусконаладки</p>
+          {% endif %}
         </div>
+        
         <div class="banner-actions">
           <a href="#" class="banner-button primary-button">Скачать<span class="icon download-icon"></span></a>
-          <a href="#" class="banner-button secondary-button">Связаться</a>
+            <a href="#" class="banner-button secondary-button">Связаться</a>
         </div>
       </div>
     </div>
@@ -95,6 +105,17 @@
   <div class="layout-container">
     <main role="main" class="main-content">
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+
+      {% if is_front and home_page_description and home_page_image %}
+        <div class="home-page-custom-content">
+          <div class="home-page-text">
+            {{ home_page_description|raw }}
+          </div>
+          <div class="home-page-image-wrapper">
+            {{ home_page_image }}
+          </div>
+        </div>
+      {% endif %}
 
       <div class="content-wrapper">
         {% if page.sidebar_first %}
