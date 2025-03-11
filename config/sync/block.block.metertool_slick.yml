@@ -1,0 +1,38 @@
+uuid: 4824f1db-ebb6-4bcb-831d-a3242ee5e7ff
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:7a451ace-265c-44aa-842f-a3c0f0acaa99'
+  module:
+    - block_content
+    - node
+    - system
+  theme:
+    - metertool
+id: metertool_slick
+theme: metertool
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:7a451ace-265c-44aa-842f-a3c0f0acaa99'
+settings:
+  id: 'block_content:7a451ace-265c-44aa-842f-a3c0f0acaa99'
+  label: Slick
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: '<front>'
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      slideshow: slideshow

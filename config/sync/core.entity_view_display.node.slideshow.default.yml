@@ -1,0 +1,90 @@
+uuid: 795441e7-4344-416f-a0a7-48a8de58de86
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.slideshow.field_image
+    - field.field.node.slideshow.field_images
+    - image.style.wide
+    - node.type.slideshow
+  module:
+    - image
+    - slick
+    - user
+id: node.slideshow.default
+targetEntityType: node
+bundle: slideshow
+mode: default
+content:
+  field_image:
+    type: image
+    label: hidden
+    settings:
+      image_link: ''
+      image_style: wide
+      image_loading:
+        attribute: eager
+    third_party_settings: {  }
+    weight: -1
+    region: content
+  field_images:
+    type: slick_image
+    label: hidden
+    settings:
+      caption:
+        alt: '0'
+        title: '0'
+      optionset: default
+      link: ''
+      by_delta: -1
+      layout: ''
+      view_mode: ''
+      cache: 0
+      admin_uri: '/admin/structure/types/manage/slideshow/display?ajax_form=1&_wrapper_format=drupal_ajax'
+      use_lb: false
+      background: false
+      box_caption: ''
+      box_caption_custom: ''
+      box_media_style: ''
+      loading: ''
+      preload: false
+      responsive_image_style: ''
+      use_theme_field: false
+      box_style: ''
+      image_style: ''
+      media_switch: slick_lightbox
+      ratio: ''
+      thumbnail_style: ''
+      grid: ''
+      grid_medium: ''
+      grid_small: ''
+      style: ''
+      skin: ''
+      overridables:
+        arrows: '0'
+        autoplay: '0'
+        dots: '0'
+        draggable: '0'
+        infinite: '0'
+        mouseWheel: '0'
+        randomize: '0'
+        variableWidth: '0'
+      optionset_thumbnail: ''
+      skin_thumbnail: ''
+      thumbnail_caption: ''
+      thumbnail_effect: ''
+      thumbnail_position: ''
+      override: false
+      skin_arrows: ''
+      skin_dots: ''
+      preserve_keys: false
+      visible_items: null
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

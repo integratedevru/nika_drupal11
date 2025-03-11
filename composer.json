@@ -24,6 +24,18 @@
                     "type": "zip"
                 }
             }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "mreq/slick-lightbox",
+                "version": "0.2.12",
+                "type": "drupal-library",
+                "dist": {
+                    "url": "https://github.com/mreq/slick-lightbox/archive/refs/tags/v0.2.12.zip",
+                    "type": "zip"
+                }
+            }
         }
     ],
     "require": {
@@ -38,9 +50,11 @@
         "drupal/media_entity_browser": "^3.0",
         "drupal/slick": "^3.0",
         "drupal/slick_extras": "^2.0",
+        "drupal/slick_lightbox": "^2.0",
         "drupal/slick_views": "^3.0",
         "drush/drush": "^13.3",
-        "kenwheeler/slick": "1.6.0"
+        "kenwheeler/slick": "1.6.0",
+        "mreq/slick-lightbox": "0.2.12"
     },
     "conflict": {
         "drupal/drupal": "*"

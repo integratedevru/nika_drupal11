@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "288d848047df7038e9d4bada41ddf755",
+    "content-hash": "626843429fc2923e171c8e2fa364977e",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2268,6 +2268,58 @@
             }
         },
         {
+            "name": "drupal/slick_lightbox",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/slick_lightbox.git",
+                "reference": "2.0.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/slick_lightbox-2.0.1.zip",
+                "reference": "2.0.1",
+                "shasum": "63a2e3b15a477e3591cf62f2a656d26fcc98fb72"
+            },
+            "require": {
+                "drupal/core": ">=9.4",
+                "drupal/slick": "^3.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "drupal": {
+                    "version": "2.0.1",
+                    "datestamp": "1714298434",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "gausarts",
+                    "homepage": "https://www.drupal.org/user/159062"
+                }
+            ],
+            "description": "Slick Lightbox, Slick within lightbox.",
+            "homepage": "https://drupal.org/project/slick_lightbox",
+            "keywords": [
+                "Drupal",
+                "carousel",
+                "lightbox",
+                "slideshow"
+            ],
+            "support": {
+                "source": "https://git.drupalcode.org/project/slick_lightbox",
+                "issues": "https://drupal.org/project/issues/slick_lightbox"
+            }
+        },
+        {
             "name": "drupal/slick_views",
             "version": "3.0.3",
             "source": {
@@ -3427,6 +3479,15 @@
                 "source": "https://github.com/mck89/peast/tree/v1.16.3"
             },
             "time": "2024-07-23T14:00:32+00:00"
+        },
+        {
+            "name": "mreq/slick-lightbox",
+            "version": "0.2.12",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/mreq/slick-lightbox/archive/refs/tags/v0.2.12.zip"
+            },
+            "type": "drupal-library"
         },
         {
             "name": "nikic/php-parser",
