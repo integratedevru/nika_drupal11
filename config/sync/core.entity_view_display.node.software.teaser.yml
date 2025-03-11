@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.software.field_software_file
     - field.field.node.software.field_software_format
     - field.field.node.software.field_software_release_date
     - field.field.node.software.field_software_type
@@ -21,6 +22,7 @@ content:
     weight: 100
     region: content
 hidden:
+  field_software_file: true
   field_software_format: true
   field_software_release_date: true
   field_software_type: true

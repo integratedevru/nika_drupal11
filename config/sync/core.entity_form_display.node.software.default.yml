@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.software.field_software_file
     - field.field.node.software.field_software_format
     - field.field.node.software.field_software_release_date
     - field.field.node.software.field_software_type
     - node.type.software
   module:
     - datetime
+    - file
     - path
 id: node.software.default
 targetEntityType: node
@@ -20,6 +22,13 @@ content:
     weight: 2
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_software_file:
+    type: file_generic
+    weight: 26
+    region: content
+    settings:
+      progress_indicator: throbber
     third_party_settings: {  }
   field_software_format:
     type: string_textfield

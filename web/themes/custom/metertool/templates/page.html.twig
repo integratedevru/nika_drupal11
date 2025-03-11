@@ -118,24 +118,14 @@
       {% endif %}
 
       <div class="content-wrapper">
-        {% if page.sidebar_first %}
-          <aside class="sidebar sidebar-first" role="complementary">
-            {{ page.sidebar_first }}
-          </aside>
-        {% endif %}
-
         <div class="main-content-area{% if page.sidebar_first and page.sidebar_second %} has-both-sidebars{% elseif page.sidebar_first or page.sidebar_second %} has-one-sidebar{% endif %}">
-          {% if page.content %}
-            <h3>Скриншоты</h3>
-            {{ page.content }}
+          {% if is_front and page.content %}
+            <div class='front-slider'>
+              <h3>Скриншоты</h3>
+              {{ page.content }}
+            </div>
           {% endif %}
         </div>
-
-        {% if page.sidebar_second %}
-          <aside class="sidebar sidebar-second" role="complementary">
-            {{ page.sidebar_second }}
-          </aside>
-        {% endif %}
       </div>
     </main>
 

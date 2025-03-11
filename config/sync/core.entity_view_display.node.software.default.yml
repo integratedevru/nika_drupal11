@@ -3,12 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.software.field_software_file
     - field.field.node.software.field_software_format
     - field.field.node.software.field_software_release_date
     - field.field.node.software.field_software_type
     - node.type.software
   module:
     - datetime
+    - file
     - options
     - user
 id: node.software.default
@@ -16,6 +18,14 @@ targetEntityType: node
 bundle: software
 mode: default
 content:
+  field_software_file:
+    type: file_default
+    label: above
+    settings:
+      use_description_as_link_text: true
+    third_party_settings: {  }
+    weight: 104
+    region: content
   field_software_format:
     type: string
     label: above
