@@ -1,0 +1,19 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a view of unformatted rows.
+ */
+#}
+{% if title %}
+  <h3>{{ title }}</h3>
+{% endif %}
+
+{% for row in rows %}
+  <div{{ row.attributes.addClass('views-row') }}>
+    {{ row.content }}
+  </div>
+{% endfor %}
+<div class="views-row software-archive-box">
+  <div class="archive-text">Архив версий</div>
+  <img src="/themes/custom/metertool/images/archive.png" alt="Архив версий" class="archive-icon">
+</div>

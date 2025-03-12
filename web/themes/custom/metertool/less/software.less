@@ -23,6 +23,7 @@
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    min-height: 250px;
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
@@ -87,5 +88,33 @@
   .views-field-field-software-type {
     display: flex;
     justify-content: end;
+  }
+
+  .software-archive-box {
+    background-color: #40bfef;
+    color: white;
+    border-radius: 8px;
+    padding: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    .archive-icon {
+        font-size: 2em;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        padding: inherit;
+    }
+    .archive-text {
+        font-size: 1.2em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: inherit;
+    }
+    &:hover {
+      background-color: darken(#40bfef, 5%);
+    }
   }
 } 

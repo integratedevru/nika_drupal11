@@ -143,19 +143,55 @@
               {% include '@metertool/block--features.html.twig' %}
             </div>
           {% endif %}
+
+          {% if is_front %}
+            <div class='front-contacts'>
+              <div class="contacts-content">
+                <h2>Контакты</h2>
+                <h4>Отдел продаж:</h4>
+                <p>телефон:</p>
+                <p>+7 800 000 00 00</p>
+                <p>почта:</p>
+                <p>price@email.ru</p>
+                <p>адрес:</p>
+                <p>777777, Россия, г. Москва, ул. Московская, 01А</p>
+                
+                <h4>Техподдержка:</h4>
+                <p>тел:</p>
+                <p>+7 800 000 00 00</p>
+                <p>почта:</p>
+                <p>support@email.ru</p>
+              </div>
+              <div class="contacts-map">
+                <div id="contacts-map"></div>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </div>
     </main>
-
-    {% if page.footer %}
-      <footer role="contentinfo" class="site-footer">
-        <div class="footer-inner">
-          {{ page.footer }}
-        </div>
-        <div class="copyright">
-          &copy; {{ 'now'|date('Y') }} MeterTool. {{ 'All rights reserved.'|t }}
-        </div>
-      </footer>
-    {% endif %}
   </div>
+
+  <footer role="contentinfo" class="site-footer">
+    <div class="footer-inner layout-container">
+      <div class="footer-left">
+        <span class="copyright">© Группа компаний «КОМПАНИЯ» 2001 - {{ 'now'|date('Y') }}</span>
+        <a href="#" class="privacy-policy">Политика конфиденциальности</a>
+      </div>
+      <div class="footer-right">
+        <div class="social-links">
+          <a href="#" class="social-link telegram" aria-label="Telegram">
+            <img src="{{ base_path ~ directory }}/images/r.png" alt="Telegram">
+          </a>
+          <a href="#" class="social-link vk" aria-label="VK">
+            <img src="{{ base_path ~ directory }}/images/vk.png" alt="VK">
+          </a>
+          <a href="#" class="social-link github" aria-label="GitHub">
+            <img src="{{ base_path ~ directory }}/images/tg.png" alt="GitHub">
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
 </div> 

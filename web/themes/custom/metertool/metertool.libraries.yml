@@ -3,9 +3,12 @@ global-styling:
   css:
     theme:
       css/style.css: {}
+      https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css: { type: external, minified: true }
   js:
     js/metertool.js: {}
     js/features.js: {}
+    https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js: { type: external, minified: true }
+    js/map.js: { defer: true }
   dependencies:
     - core/drupal
     - core/jquery
