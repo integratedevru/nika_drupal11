@@ -820,6 +820,7 @@ a:hover {
 }
 .view-software .software-archive-box:hover {
   background-color: #28b7ed;
+  color: #FFFFFF;
 }
 /**
  * @file
@@ -953,6 +954,116 @@ a:hover {
     font-size: 1rem;
     margin-bottom: 2rem;
   }
+}
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+.modal.active {
+  display: flex;
+}
+.modal-content {
+  background: #FFFFFF;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  font-size: 24px;
+  line-height: 1;
+  color: #999;
+  transition: color 0.3s ease;
+}
+.modal-close:hover {
+  color: #2a2a2a;
+}
+.modal-header {
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #2a2a2a;
+}
+.modal-form .form-group {
+  margin-bottom: 1rem;
+}
+.modal-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #2a2a2a;
+  font-size: 0.9rem;
+}
+.modal-form .form-group input[type="text"],
+.modal-form .form-group input[type="tel"],
+.modal-form .form-group input[type="email"],
+.modal-form .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #E0E0E0;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+.modal-form .form-group input[type="text"]:focus,
+.modal-form .form-group input[type="tel"]:focus,
+.modal-form .form-group input[type="email"]:focus,
+.modal-form .form-group textarea:focus {
+  outline: none;
+  border-color: #32CBED;
+}
+.modal-form .form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+.modal-form .checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+.modal-form .checkbox-group input[type="checkbox"] {
+  margin-top: 4px;
+}
+.modal-form .checkbox-group label {
+  font-size: 0.85rem;
+  color: #666;
+  line-height: 1.4;
+}
+.modal-form .submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #32CBED;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+.modal-form .submit-button:hover {
+  background: #13b5d9;
 }
 /**
  * @file

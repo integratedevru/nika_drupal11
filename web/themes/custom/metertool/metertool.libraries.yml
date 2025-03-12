@@ -9,6 +9,7 @@ global-styling:
     js/features.js: {}
     https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js: { type: external, minified: true }
     js/map.js: { defer: true }
+    js/modal.js: {}
   dependencies:
     - core/drupal
     - core/jquery
