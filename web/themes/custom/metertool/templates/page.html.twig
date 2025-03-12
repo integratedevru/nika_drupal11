@@ -69,8 +69,8 @@
           </div>
           
           <div class="user-menu">
-            <a href="#">Войти</a>
-            <a href="#">Регистрация</a>
+            <a href="{{ path('user.login') }}">Войти</a>
+            <a href="{{ path('user.register') }}">Регистрация</a>
           </div>
         </div>
       </div>
@@ -119,12 +119,13 @@
 
       <div class="content-wrapper">
         <div class="main-content-area{% if page.sidebar_first and page.sidebar_second %} has-both-sidebars{% elseif page.sidebar_first or page.sidebar_second %} has-one-sidebar{% endif %}">
-          {% if is_front and page.content %}
-            <div class='front-slider'>
+        
+            <div {% if is_front %}class='front-slider'{% endif %}>
+            {% if is_front %}
               <h2>Скриншоты</h2>
+            {% endif %}
               {{ page.content }}
             </div>
-          {% endif %}
           
           {% if is_front %}
             {% set software_block = drupal_view('software', 'block_1') %}

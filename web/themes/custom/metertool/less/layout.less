@@ -3,6 +3,33 @@
  * Layout styles for the MeterTool theme.
  */
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.layout-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
 // Base layout
 body {
   background-image: none;
@@ -65,13 +92,6 @@ body:not(.is-always-mobile-nav) .site-footer {
   @media (max-width: 768px) {
     padding-top: 0.5rem;
   }
-}
-
-// Main layout container
-.layout-container {
-  max-width: @max-width;
-  margin: 0 auto;
-  padding: 0 @padding-default;
 }
 
 // Header inner layout
@@ -166,10 +186,6 @@ body:not(.is-always-mobile-nav) .site-footer {
 }
 
 // Content layout
-.main-content {
-  margin: @margin-default * 2 0 @margin-default 0;
-}
-
 .content-wrapper {
   display: flex;
   gap: @padding-default * 2;
