@@ -6,7 +6,7 @@
 .view-software {
   .view-content {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 2rem;
     padding: 2rem 0;
   }
@@ -22,24 +22,10 @@
     gap: 1rem;
     position: relative;
     overflow: hidden;
-
+    cursor: pointer;
     &:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
-    }
-
-    // Software icon
-    &::before {
-      content: '';
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      width: 40px;
-      height: 40px;
-      background-image: url('../images/software-icon.svg');
-      background-size: contain;
-      background-repeat: no-repeat;
-      opacity: 0.8;
     }
   }
 
@@ -96,5 +82,10 @@
         font-size: 0.85rem;
       }
     }
+  }
+
+  .views-field-field-software-type {
+    display: flex;
+    justify-content: end;
   }
 } 

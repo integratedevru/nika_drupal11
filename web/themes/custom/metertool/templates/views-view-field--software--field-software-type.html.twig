@@ -1,0 +1,12 @@
+{#
+/**
+ * @file
+ * Template for the software type field in software view.
+ */
+#}
+{% set os_value = output|render|striptags|trim %}
+{% if os_value == '0' %}
+  <img src="/themes/custom/metertool/images/win.png" alt="Windows" title="Windows">
+{% else %}
+  <img src="/themes/custom/metertool/images/lin.png" alt="Linux" title="Linux">
+{% endif %} 
