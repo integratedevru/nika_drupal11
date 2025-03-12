@@ -120,12 +120,14 @@
       <div class="content-wrapper">
         <div class="main-content-area{% if page.sidebar_first and page.sidebar_second %} has-both-sidebars{% elseif page.sidebar_first or page.sidebar_second %} has-one-sidebar{% endif %}">
         
-            <div {% if is_front %}class='front-slider'{% endif %}>
+          <div {% if is_front %}class='front-slider'{% endif %}>
             {% if is_front %}
               <h2>Скриншоты</h2>
             {% endif %}
+            <div class="front-slider-content">
               {{ page.content }}
             </div>
+          </div>
           
           {% if is_front %}
             {% set software_block = drupal_view('software', 'block_1') %}
