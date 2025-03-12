@@ -49,27 +49,44 @@
 
   .progress-circle {
     position: relative;
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
 
     svg {
       width: 100%;
       height: 100%;
       transform: rotate(-90deg);
+      animation: initial-spin 2s ease-out;
+    }
+
+    &:hover {
+      .circle-bg {
+        animation: spin-reverse 3s linear infinite;
+      }
+
+      .circle-progress {
+        stroke-width: 12;
+        animation: spin 2s linear infinite;
+      }
     }
 
     .circle-bg {
       fill: none;
       stroke: #E8E8E8;
-      stroke-width: 8;
+      stroke-width: 10;
+      transition: stroke-width 0.3s ease;
+      transform-origin: center;
     }
 
     .circle-progress {
       fill: none;
       stroke: @primary-color;
-      stroke-width: 8;
+      stroke-width: 10;
       stroke-linecap: round;
-      transition: stroke-dashoffset 1s ease;
+      transition: all 0.3s ease;
+      transform-origin: center;
     }
 
     .progress-text {
@@ -96,6 +113,33 @@
     .feature-title {
       font-size: 1.1rem;
     }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes initial-spin {
+  from {
+    transform: rotate(-450deg);
+  }
+  to {
+    transform: rotate(-90deg);
   }
 }
 

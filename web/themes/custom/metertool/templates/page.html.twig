@@ -60,10 +60,10 @@
             
             <nav class="primary-nav">
               <ul>
-                <li><a href="#">Описание</a></li>
-                <li><a href="#">Скачать</a></li>
-                <li><a href="#">Преимущества</a></li>
-                <li><a href="#">Контакты</a></li>
+                <li><a href="#description">Описание</a></li>
+                <li><a href="#download">Скачать</a></li>
+                <li><a href="#features">Преимущества</a></li>
+                <li><a href="#contacts">Контакты</a></li>
               </ul>
             </nav>
           </div>
@@ -107,7 +107,7 @@
       <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
       {% if is_front and home_page_description and home_page_image %}
-        <div class="home-page-custom-content">
+        <div id="description" class="home-page-custom-content">
           <div class="home-page-text">
             {{ home_page_description|raw }}
           </div>
@@ -132,7 +132,7 @@
           {% if is_front %}
             {% set software_block = drupal_view('software', 'block_1') %}
             {% if software_block %}
-              <div class="software-block">
+              <div id="download" class="software-block">
                 <h2>Скачать</h2>
                 {{ software_block }}
               </div>
@@ -140,7 +140,7 @@
           {% endif %}
 
           {% if is_front %}
-            <div class="features-section">
+            <div id="features" class="features-section">
               <h2 class="section-title">Преимущества</h2>
               <h4 class="section-subtitle">Сравнительная характеристика по сравнению с аналогичными системами:</h4>
               {% include '@metertool/block--features.html.twig' %}
@@ -148,7 +148,7 @@
           {% endif %}
 
           {% if is_front %}
-            <div class='front-contacts'>
+            <div id="contacts" class="front-contacts">
               <div class="contacts-content">
                 <h2>Контакты</h2>
                 <h4>Отдел продаж:</h4>

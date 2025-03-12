@@ -77,6 +77,7 @@
 }
 .front-slider .slick__slide {
   padding: 0 10px;
+  cursor: pointer;
 }
 .front-slider .media--slick .media__element {
   max-width: 100%;
@@ -735,6 +736,13 @@ a:hover {
 .view-software .views-row:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 25px rgba(0, 0, 0, 0.1);
+  color: #32CBED;
+}
+.view-software .views-row:hover .field-content {
+  color: #32CBED;
+}
+.view-software .views-row:hover a {
+  color: #32CBED;
 }
 .view-software .views-field-title {
   margin-right: 3rem;
@@ -856,25 +864,38 @@ a:hover {
 }
 .features-block .progress-circle {
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 .features-block .progress-circle svg {
   width: 100%;
   height: 100%;
   transform: rotate(-90deg);
+  animation: initial-spin 2s ease-out;
+}
+.features-block .progress-circle:hover .circle-bg {
+  animation: spin-reverse 3s linear infinite;
+}
+.features-block .progress-circle:hover .circle-progress {
+  stroke-width: 12;
+  animation: spin 2s linear infinite;
 }
 .features-block .progress-circle .circle-bg {
   fill: none;
   stroke: #E8E8E8;
-  stroke-width: 8;
+  stroke-width: 10;
+  transition: stroke-width 0.3s ease;
+  transform-origin: center;
 }
 .features-block .progress-circle .circle-progress {
   fill: none;
   stroke: #32CBED;
-  stroke-width: 8;
+  stroke-width: 10;
   stroke-linecap: round;
-  transition: stroke-dashoffset 1s ease;
+  transition: all 0.3s ease;
+  transform-origin: center;
 }
 .features-block .progress-circle .progress-text {
   position: absolute;
@@ -895,6 +916,30 @@ a:hover {
   }
   .features-block .feature-title {
     font-size: 1.1rem;
+  }
+}
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin-reverse {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+@keyframes initial-spin {
+  from {
+    transform: rotate(-450deg);
+  }
+  to {
+    transform: rotate(-90deg);
   }
 }
 @media (max-width: 768px) {
