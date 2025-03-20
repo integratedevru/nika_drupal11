@@ -6,7 +6,7 @@
 // Button styles
 .banner-button {
   padding: @padding-default * 0.55 @padding-default * 2;
-  font-weight: 500;
+  font-weight: 800;
   display: inline-flex;
   align-items: center;
   border-radius: 30px;
@@ -15,19 +15,19 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   text-decoration: none;
-  font-size: 1rem;
-  
+  font-size: 1.25rem;
+
   @media (max-width: 768px) {
     width: 100%;
     max-width: 215px;
   }
-  
+
   &:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
     text-decoration: none;
   }
-  
+
   &.primary-button {
     background-color: @primary-color;
     color: @white;
@@ -38,7 +38,7 @@
         text-decoration: none;
     }
   }
-  
+
   &.secondary-button {
     background-color: @transparent;
     backdrop-filter: blur(5px);

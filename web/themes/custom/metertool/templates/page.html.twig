@@ -57,7 +57,7 @@
                 <img src="{{ base_path ~ directory }}/images/logo.svg" alt="{{ 'Home'|t }}" />
               </a>
             </div>
-            
+
             <nav class="primary-nav">
               <ul>
                 <li><a href="#description">Описание</a></li>
@@ -67,25 +67,25 @@
               </ul>
             </nav>
           </div>
-          
+
           <div class="user-menu">
             <a href="/user/login">Войти</a>
             <a href="/user/register">Регистрация</a>
           </div>
         </div>
       </div>
-    
+
       <div class="arc-decoration">
         <div class="dot"></div>
       </div>
-      
+
       <div class="banner-content">
         {% if home_page_title %}
           <h1 class="banner-title">{{ home_page_title }}</h1>
         {% else %}
           <h1 class="banner-title">MeterTools 5</h1>
         {% endif %}
-        
+
         <div class="banner-description">
           {% if home_page_banner_description %}
             <p>{{ home_page_banner_description }}</p>
@@ -93,7 +93,7 @@
             <p>Программа для чтения данных и настройки приборов учёта, устройств сбора и передачи данных, а также выполнения задач пусконаладки</p>
           {% endif %}
         </div>
-        
+
         <div class="banner-actions">
           <a href="#" class="banner-button primary-button">Скачать<span class="icon download-icon"></span></a>
           <a href="#" class="banner-button secondary-button" id="contact-button">Связаться</a>
@@ -152,7 +152,7 @@
 
       <div class="content-wrapper">
         <div class="main-content-area{% if page.sidebar_first and page.sidebar_second %} has-both-sidebars{% elseif page.sidebar_first or page.sidebar_second %} has-one-sidebar{% endif %}">
-        
+
           <div {% if is_front %}class='front-slider'{% endif %}>
             {% if is_front %}
               <h2>Скриншоты</h2>
@@ -161,7 +161,7 @@
               {{ page.content }}
             </div>
           </div>
-          
+
           {% if is_front %}
             {% set software_block = drupal_view('software', 'block_1') %}
             {% if software_block %}
@@ -186,17 +186,17 @@
                 <h2>Контакты</h2>
                 <h4>Отдел продаж:</h4>
                 <p>телефон:</p>
-                <p>+7 800 000 00 00</p>
+                <p class="bold-line">+7 800 000 00 00</p>
                 <p>почта:</p>
-                <p>price@email.ru</p>
+                <p class="bold-line">price@email.ru</p>
                 <p>адрес:</p>
-                <p>777777, Россия, г. Москва, ул. Московская, 01А</p>
-                
+                <p class="bold-line">777777, Россия, г. Москва, ул. Московская, 01А</p>
+
                 <h4>Техподдержка:</h4>
                 <p>тел:</p>
-                <p>+7 800 000 00 00</p>
+                <p class="bold-line">+7 800 000 00 00</p>
                 <p>почта:</p>
-                <p>support@email.ru</p>
+                <p class="bold-line">support@email.ru</p>
               </div>
               <div class="contacts-map">
                 <div id="contacts-map"></div>
@@ -229,5 +229,5 @@
       </div>
     </div>
   </footer>
-  
-</div> 
+
+</div>

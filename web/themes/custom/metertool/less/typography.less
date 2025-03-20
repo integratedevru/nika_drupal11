@@ -7,27 +7,171 @@
 body {
   font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
   font-size: 16px;
-  line-height: 1.5;
+  line-height: 1.6;
   color: @text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   margin: 0;
   padding: 0;
+}
+
+// Headings hierarchy
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: @margin-default;
+  color: @secondary-color;
+}
+
+h1 {
+  font-size: 4rem;
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 2.5rem;
+  letter-spacing: -0.3px;
+  color: rgba(57, 57, 57, 1);
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  color: rgba(57, 57, 57, 1);
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.primary-nav li a{
+  font-size: 16px;
+}
+
+.user-menu a{
+  font-size: 16px;
 }
 
 // Links
 a {
   color: @link-color;
   text-decoration: none;
-  transition: color 0.3s ease;
-  
+  transition: all 0.3s ease;
+
   &:hover {
     color: @link-hover-color;
     text-decoration: underline;
   }
 }
 
-// Headings
+// Paragraph styles
+p {
+  margin-top: 0;
+  font-weight:600;
+  margin-bottom: @margin-default;
+  font-size: 19px!important;
+  color: rgba(57, 57, 57, 1);
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Lists
+ul, ol {
+  margin-top: 0;
+  margin-bottom: @margin-default;
+  padding-left: 1.5rem;
+}
+
+// Page title specific styles
 .page-title {
-  font-size: 2rem;
-  margin-bottom: @margin-default * 1.5;
+  font-size: 2.5rem;
+  margin-bottom: @margin-default * 2;
+  color: @secondary-color;
+  font-weight: 700;
+  position: relative;
+
+  &:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: @primary-color;
+    margin-top: @margin-default * 0.5;
+  }
+}
+
+// Text utilities
+.text-large {
+  font-size: 1.25rem;
+}
+
+.text-small {
+  font-size: 0.875rem;
+}
+
+.text-primary {
   color: @primary-color;
+}
+
+.text-secondary {
+  color: @secondary-color;
+}
+
+// Font weights
+.font-light {
+  font-weight: 300;
+}
+
+.font-normal {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+// Responsive typography
+@media screen and (max-width: @mobile-breakpoint) {
+  body {
+    font-size: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  h5, h6 {
+    font-size: 1rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
 }

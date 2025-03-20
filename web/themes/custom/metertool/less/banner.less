@@ -7,14 +7,14 @@
   &-wrapper {
     position: relative;
     margin-bottom: 0;
-    
+
     &.full-width {
       width: 100%;
       margin-left: auto;
       margin-right: auto;
     }
   }
-  
+
   background-image: url('../images/banner_back.png');
   background-size: cover;
   background-position: center;
@@ -22,7 +22,7 @@
   position: relative;
   overflow: hidden;
   color: @white;
-  
+
   // Gradient overlay
   &::before {
     content: '';
@@ -34,7 +34,7 @@
     background: linear-gradient(0deg, @white 0.12%, rgba(21, 76, 89, 0.7) 35.71%, rgba(7, 130, 157, 0.7) 100%);
     z-index: 1;
   }
-  
+
   &-content {
     position: relative;
     z-index: 3;
@@ -42,52 +42,55 @@
     margin: 0 auto;
     text-align: center;
     padding: 200px 0 300px;
-    
+
     @media (max-width: 768px) {
       padding: 70px 0 100px;
     }
   }
-  
+
   &-title {
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: @margin-default;
     line-height: 1.2;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     color: @white;
-    
+
     @media (max-width: 768px) {
       font-size: 2rem;
     }
   }
-  
+
+  p{
+    color: @white;
+  }
+
   &-description {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 1.6;
     margin-bottom: @margin-default * 2;
     max-width: 750px;
     margin-left: auto;
     margin-right: auto;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-    
+
     @media (max-width: 768px) {
       font-size: 1rem;
     }
   }
-  
+
   &-actions {
     display: flex;
     gap: @padding-default * 1.5;
     margin-top: @margin-default * 2;
     justify-content: center;
-    
+
     @media (max-width: 768px) {
       flex-direction: column;
       align-items: center;
       gap: 1rem;
     }
   }
-  
+
   // Arc decoration that spans across the header
   .arc-decoration {
     background-image: url('../images/ellipse.png');

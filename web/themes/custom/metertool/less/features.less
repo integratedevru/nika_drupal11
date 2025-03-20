@@ -41,10 +41,9 @@
   }
 
   .feature-title {
-    font-size: 1.25rem;
-    font-weight: 500;
-    color: @text-color;
+    font-size: 1.5rem!important;
     margin: 0;
+    word-spacing: 9999999px;
   }
 
   .progress-circle {
@@ -53,6 +52,20 @@
     height: 160px;
     transition: transform 0.3s ease;
     cursor: pointer;
+
+    .circle-white-sector {
+      fill: none;
+      stroke: @white;
+      stroke-width: 14;
+      stroke-linecap: butt;
+      stroke-dasharray: 310;
+      stroke-dashoffset: 240; // Increased white sector size for better visibility
+      transform: rotate(-90deg);
+      transform-origin: center;
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
+    }
 
     svg {
       width: 100%;
@@ -67,7 +80,12 @@
       }
 
       .circle-progress {
-        stroke-width: 12;
+        stroke-width: 14;
+        animation: spin 2s linear infinite;
+      }
+
+      .circle-white-sector {
+        stroke-width: 14;
         animation: spin 2s linear infinite;
       }
     }
@@ -75,7 +93,7 @@
     .circle-bg {
       fill: none;
       stroke: #E8E8E8;
-      stroke-width: 10;
+      stroke-width: 14;
       transition: stroke-width 0.3s ease;
       transform-origin: center;
     }
@@ -83,8 +101,8 @@
     .circle-progress {
       fill: none;
       stroke: @primary-color;
-      stroke-width: 10;
-      stroke-linecap: round;
+      stroke-width: 14;
+      stroke-linecap: butt;
       transition: all 0.3s ease;
       transform-origin: center;
     }
@@ -111,7 +129,7 @@
     }
 
     .feature-title {
-      font-size: 1.1rem;
+      font-size: 1.25rem;
     }
   }
 }
@@ -156,4 +174,4 @@
       margin-bottom: 2rem;
     }
   }
-} 
+}
