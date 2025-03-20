@@ -111,7 +111,7 @@
       </div>
       <form class="modal-form">
         <div class="form-group">
-          <label for="name">Имя</label>
+          <label for="name">Имя<span class="required">*</span></label>
           <input type="text" id="name" name="name" placeholder="Введите ваше имя" required>
         </div>
         <div class="form-group">
@@ -119,18 +119,20 @@
           <input type="tel" id="phone" name="phone" placeholder="Введите ваш телефон" required>
         </div>
         <div class="form-group">
-          <label for="email">E-mail*</label>
+          <label for="email">E-mail<span class="required">*</span></label>
           <input type="email" id="email" name="email" placeholder="Введите ваш E-mail" required>
         </div>
         <div class="form-group">
-          <label for="message">Сообщение*</label>
+          <label for="message">Сообщение<span class="required">*</span></label>
           <textarea id="message" name="message" placeholder="Текст сообщения" required></textarea>
         </div>
         <div class="checkbox-group">
           <input type="checkbox" id="privacy" name="privacy" required>
-          <label for="privacy">Я согласен(на) на обработку персональных данных</label>
+          <label for="privacy">Я согласен(на) на обработку персональных данных<span class="required">*</span></label>
         </div>
-        <button type="submit" class="submit-button">Отправить</button>
+        <div class="submit-button-container">
+          <button type="submit" class="submit-button">Отправить</button>
+        </div>
       </form>
     </div>
   </div>

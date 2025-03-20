@@ -1055,28 +1055,27 @@ ol {
   stroke-dashoffset: 141.37;
 }
 .features-block .feature-item.second .circle-white-sector {
-  stroke-dasharray: 250;
+  stroke-dasharray: 334;
   stroke-dashoffset: 200;
 }
 .features-block .feature-item.second .circle-progress {
-  stroke-dasharray: 175;
-  stroke-dashoffset: 150;
+  stroke-dasharray: 276;
+  stroke-dashoffset: 350;
 }
 .features-block .feature-item.third .circle-white-sector {
-  stroke-dasharray: 270;
-  stroke-dashoffset: 220;
+  stroke-dashoffset: 175;
 }
 .features-block .feature-item.third .circle-progress {
-  stroke-dasharray: 270;
-  stroke-dashoffset: 108;
+  stroke-dasharray: 170.74;
+  stroke-dashoffset: 141.37;
 }
 .features-block .feature-item.fourth .circle-white-sector {
-  stroke-dasharray: 260;
-  stroke-dashoffset: 210;
+  stroke-dasharray: 334;
+  stroke-dashoffset: 200;
 }
 .features-block .feature-item.fourth .circle-progress {
-  stroke-dasharray: 260;
-  stroke-dashoffset: 143;
+  stroke-dasharray: 276;
+  stroke-dashoffset: 350;
 }
 @media (max-width: 768px) {
   .features-block .progress-circle {
@@ -1143,36 +1142,36 @@ ol {
 }
 .modal-content {
   background: #FFFFFF;
-  padding: 2rem;
+  padding: 1.5rem;
   border-radius: 10px;
   width: 100%;
-  max-width: 500px;
+  max-width: 440px;
   position: relative;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 .modal-close {
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 30px;
   background: none;
   border: none;
   cursor: pointer;
   padding: 5px;
-  font-size: 24px;
+  font-size: 50px;
   line-height: 1;
-  color: #999;
+  color: #7d7d7d;
   transition: color 0.3s ease;
 }
 .modal-close:hover {
   color: #2a2a2a;
 }
 .modal-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   padding-right: 2rem;
 }
 .modal-header h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   color: #2a2a2a;
 }
 .modal-form .form-group {
@@ -1180,7 +1179,7 @@ ol {
 }
 .modal-form .form-group label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.1rem;
   color: #2a2a2a;
   font-size: 0.9rem;
 }
@@ -1189,7 +1188,8 @@ ol {
 .modal-form .form-group input[type="email"],
 .modal-form .form-group textarea {
   width: 100%;
-  padding: 0.75rem;
+  padding: 0.3rem;
+  min-height: 40px;
   border: 1px solid #E0E0E0;
   border-radius: 5px;
   font-size: 1rem;
@@ -1220,8 +1220,15 @@ ol {
   color: #666;
   line-height: 1.4;
 }
-.modal-form .submit-button {
-  width: 100%;
+.modal-form .required {
+  color: red;
+}
+.modal-form .submit-button-container {
+  display: flex;
+  justify-content: center;
+}
+.modal-form .submit-button-container .submit-button {
+  width: 250px;
   padding: 0.75rem;
   background: #32CBED;
   color: #FFFFFF;
@@ -1233,7 +1240,7 @@ ol {
   transition: background-color 0.3s ease;
   margin-top: 1rem;
 }
-.modal-form .submit-button:hover {
+.modal-form .submit-button-container .submit-button:hover {
   background: #13b5d9;
 }
 /**
