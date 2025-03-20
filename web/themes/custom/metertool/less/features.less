@@ -118,6 +118,50 @@
     }
   }
 
+  // Specific styles for each feature item's circles
+  .feature-item.first {
+    .circle-white-sector {
+      stroke-dashoffset: 175;
+    }
+    .circle-progress {
+      stroke-dasharray: 170.74;
+      stroke-dashoffset: 141.37;
+    }
+  }
+
+  .feature-item.second {
+    .circle-white-sector {
+      stroke-dasharray: 250;
+      stroke-dashoffset: 200;
+    }
+    .circle-progress {
+      stroke-dasharray: 175;
+      stroke-dashoffset: 150; // Value for 40% (250 * (1 - 0.40))
+    }
+  }
+
+  .feature-item.third {
+    .circle-white-sector {
+      stroke-dasharray: 270;
+      stroke-dashoffset: 220;
+    }
+    .circle-progress {
+      stroke-dasharray: 270;
+      stroke-dashoffset: 108; // Value for 60% (270 * (1 - 0.60))
+    }
+  }
+
+  .feature-item.fourth {
+    .circle-white-sector {
+      stroke-dasharray: 260;
+      stroke-dashoffset: 210;
+    }
+    .circle-progress {
+      stroke-dasharray: 260;
+      stroke-dashoffset: 143; // Value for 45% (260 * (1 - 0.45))
+    }
+  }
+
   @media (max-width: @mobile-breakpoint) {
     .progress-circle {
       width: 120px;

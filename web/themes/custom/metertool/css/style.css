@@ -1047,6 +1047,37 @@ ol {
   font-weight: 600;
   color: #2a2a2a;
 }
+.features-block .feature-item.first .circle-white-sector {
+  stroke-dashoffset: 175;
+}
+.features-block .feature-item.first .circle-progress {
+  stroke-dasharray: 170.74;
+  stroke-dashoffset: 141.37;
+}
+.features-block .feature-item.second .circle-white-sector {
+  stroke-dasharray: 250;
+  stroke-dashoffset: 200;
+}
+.features-block .feature-item.second .circle-progress {
+  stroke-dasharray: 175;
+  stroke-dashoffset: 150;
+}
+.features-block .feature-item.third .circle-white-sector {
+  stroke-dasharray: 270;
+  stroke-dashoffset: 220;
+}
+.features-block .feature-item.third .circle-progress {
+  stroke-dasharray: 270;
+  stroke-dashoffset: 108;
+}
+.features-block .feature-item.fourth .circle-white-sector {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 210;
+}
+.features-block .feature-item.fourth .circle-progress {
+  stroke-dasharray: 260;
+  stroke-dashoffset: 143;
+}
 @media (max-width: 768px) {
   .features-block .progress-circle {
     width: 120px;
