@@ -52,26 +52,27 @@
     height: 160px;
     transition: transform 0.3s ease;
     cursor: pointer;
-
-    .circle-white-sector {
-      fill: none;
-      stroke: @white;
-      stroke-width: 14;
-      stroke-linecap: butt;
-      stroke-dasharray: 310;
-      stroke-dashoffset: 240; // Increased white sector size for better visibility
-      transform: rotate(-90deg);
-      transform-origin: center;
-      transition: all 0.3s ease;
-      z-index: 2;
-      position: relative;
-    }
-
+    
     svg {
       width: 100%;
       height: 100%;
       transform: rotate(-90deg);
       animation: initial-spin 2s ease-out;
+      overflow: visible; // Ensure SVG content doesn't get clipped
+    }
+
+    .circle-white-sector {
+      fill: none;
+      stroke: @white;
+      stroke-width: 17;
+      stroke-linecap: butt;
+      stroke-dasharray: 270;
+      stroke-dashoffset: 240;
+      transform: rotate(-90deg);
+      transform-origin: center;
+      transition: all 0.3s ease;
+      z-index: 2;
+      position: relative;
     }
 
     &:hover {
@@ -80,12 +81,12 @@
       }
 
       .circle-progress {
-        stroke-width: 14;
+        stroke-width: 17;
         animation: spin 2s linear infinite;
       }
 
       .circle-white-sector {
-        stroke-width: 14;
+        stroke-width: 17;
         animation: spin 2s linear infinite;
       }
     }
@@ -93,7 +94,7 @@
     .circle-bg {
       fill: none;
       stroke: #E8E8E8;
-      stroke-width: 14;
+      stroke-width: 17;
       transition: stroke-width 0.3s ease;
       transform-origin: center;
     }
@@ -101,7 +102,7 @@
     .circle-progress {
       fill: none;
       stroke: @primary-color;
-      stroke-width: 14;
+      stroke-width: 17;
       stroke-linecap: butt;
       transition: all 0.3s ease;
       transform-origin: center;
@@ -121,43 +122,46 @@
   // Specific styles for each feature item's circles
   .feature-item.first {
     .circle-white-sector {
-      stroke-dashoffset: 175;
+      stroke-dashoffset: 145;
     }
     .circle-progress {
-      stroke-dasharray: 170.74;
-      stroke-dashoffset: 141.37;
+      stroke-dasharray: 158;
+      stroke-dashoffset: 128;
     }
   }
 
   .feature-item.second {
     .circle-white-sector {
-      stroke-dasharray: 334;
-      stroke-dashoffset: 200;
+      stroke-dasharray: 306;
+      stroke-dashoffset: 180;
     }
     .circle-progress {
-      stroke-dasharray: 276;
-      stroke-dashoffset: 350;
+      transform: rotate(-34deg);
+      stroke-dasharray: 268;
+      stroke-dashoffset: 325;
     }
   }
 
   .feature-item.third {
     .circle-white-sector {
-      stroke-dashoffset: 175;
+      stroke-dashoffset: 145;
     }
     .circle-progress {
-      stroke-dasharray: 170.74;
-      stroke-dashoffset: 141.37;
+      stroke-dasharray: 145;
+      stroke-dashoffset: 133;
+      transform: rotate(45deg);
     }
   }
 
   .feature-item.fourth {
     .circle-white-sector {
-      stroke-dasharray: 334;
-      stroke-dashoffset: 200;
+      stroke-dasharray: 306;
+      stroke-dashoffset: 181;
     }
     .circle-progress {
-      stroke-dasharray: 276;
-      stroke-dashoffset: 350;
+      stroke-dasharray: 253;
+      stroke-dashoffset: 313;
+      transform: rotate(-7deg);
     }
   }
 

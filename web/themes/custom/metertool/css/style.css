@@ -993,12 +993,19 @@ ol {
   transition: transform 0.3s ease;
   cursor: pointer;
 }
+.features-block .progress-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+  animation: initial-spin 2s ease-out;
+  overflow: visible;
+}
 .features-block .progress-circle .circle-white-sector {
   fill: none;
   stroke: #FFFFFF;
-  stroke-width: 14;
+  stroke-width: 17;
   stroke-linecap: butt;
-  stroke-dasharray: 310;
+  stroke-dasharray: 270;
   stroke-dashoffset: 240;
   transform: rotate(-90deg);
   transform-origin: center;
@@ -1006,34 +1013,28 @@ ol {
   z-index: 2;
   position: relative;
 }
-.features-block .progress-circle svg {
-  width: 100%;
-  height: 100%;
-  transform: rotate(-90deg);
-  animation: initial-spin 2s ease-out;
-}
 .features-block .progress-circle:hover .circle-bg {
   animation: spin-reverse 3s linear infinite;
 }
 .features-block .progress-circle:hover .circle-progress {
-  stroke-width: 14;
+  stroke-width: 17;
   animation: spin 2s linear infinite;
 }
 .features-block .progress-circle:hover .circle-white-sector {
-  stroke-width: 14;
+  stroke-width: 17;
   animation: spin 2s linear infinite;
 }
 .features-block .progress-circle .circle-bg {
   fill: none;
   stroke: #E8E8E8;
-  stroke-width: 14;
+  stroke-width: 17;
   transition: stroke-width 0.3s ease;
   transform-origin: center;
 }
 .features-block .progress-circle .circle-progress {
   fill: none;
   stroke: #32CBED;
-  stroke-width: 14;
+  stroke-width: 17;
   stroke-linecap: butt;
   transition: all 0.3s ease;
   transform-origin: center;
@@ -1048,34 +1049,37 @@ ol {
   color: #2a2a2a;
 }
 .features-block .feature-item.first .circle-white-sector {
-  stroke-dashoffset: 175;
+  stroke-dashoffset: 145;
 }
 .features-block .feature-item.first .circle-progress {
-  stroke-dasharray: 170.74;
-  stroke-dashoffset: 141.37;
+  stroke-dasharray: 158;
+  stroke-dashoffset: 128;
 }
 .features-block .feature-item.second .circle-white-sector {
-  stroke-dasharray: 334;
-  stroke-dashoffset: 200;
+  stroke-dasharray: 306;
+  stroke-dashoffset: 180;
 }
 .features-block .feature-item.second .circle-progress {
-  stroke-dasharray: 276;
-  stroke-dashoffset: 350;
+  transform: rotate(-34deg);
+  stroke-dasharray: 268;
+  stroke-dashoffset: 325;
 }
 .features-block .feature-item.third .circle-white-sector {
-  stroke-dashoffset: 175;
+  stroke-dashoffset: 145;
 }
 .features-block .feature-item.third .circle-progress {
-  stroke-dasharray: 170.74;
-  stroke-dashoffset: 141.37;
+  stroke-dasharray: 145;
+  stroke-dashoffset: 133;
+  transform: rotate(45deg);
 }
 .features-block .feature-item.fourth .circle-white-sector {
-  stroke-dasharray: 334;
-  stroke-dashoffset: 200;
+  stroke-dasharray: 306;
+  stroke-dashoffset: 181;
 }
 .features-block .feature-item.fourth .circle-progress {
-  stroke-dasharray: 276;
-  stroke-dashoffset: 350;
+  stroke-dasharray: 253;
+  stroke-dashoffset: 313;
+  transform: rotate(-7deg);
 }
 @media (max-width: 768px) {
   .features-block .progress-circle {
@@ -1213,12 +1217,14 @@ ol {
   margin-top: 1.5rem;
 }
 .modal-form .checkbox-group input[type="checkbox"] {
-  margin-top: 4px;
+  width: 20px;
+  height: 20px;
 }
 .modal-form .checkbox-group label {
   font-size: 0.85rem;
   color: #666;
   line-height: 1.4;
+  padding: 0;
 }
 .modal-form .required {
   color: red;
