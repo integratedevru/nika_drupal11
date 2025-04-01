@@ -22,6 +22,12 @@ up:
 	docker compose pull
 	docker compose up -d --remove-orphans
 
+## watch-less	:	Start LESS watcher for the MeterTool theme.
+.PHONY: watch-less
+watch-less:
+	@echo "Starting LESS watcher for MeterTool theme..."
+	docker exec php sh -c "chmod +x /var/www/html/web/themes/custom/metertool/node_modules/.bin/lessc && cd /var/www/html/web/themes/custom/metertool && node watch-less.js"
+
 .PHONY: mutagen
 mutagen:
 	mutagen-compose up

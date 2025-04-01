@@ -271,7 +271,7 @@ body:not(.is-always-mobile-nav) .site-footer {
 }
 .header-top {
   position: relative;
-  padding-top: 2rem;
+  padding-top: 2.2rem;
   border-bottom: none;
 }
 @media (max-width: 768px) {
