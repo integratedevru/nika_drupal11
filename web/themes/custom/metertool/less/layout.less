@@ -36,6 +36,13 @@ body {
   background-color: unset;
 }
 
+.site-footer{
+  padding: 3rem 0px!important;
+  @media (max-width: 768px) {
+    padding: 1rem 0px;
+  }
+}
+
 body:not(.is-always-mobile-nav) .site-footer {
   border-inline-start: unset;
 }
@@ -76,7 +83,7 @@ body:not(.is-always-mobile-nav) .site-footer {
     }
 
     .copyright {
-      font-size: 0.9em;
+      font-size: 1.3rem!important;
       margin-top: @margin-default;
       text-align: center;
     }
@@ -86,7 +93,7 @@ body:not(.is-always-mobile-nav) .site-footer {
 // Header top section
 .header-top {
   position: relative;
-  padding-top: @padding-default*2.2;
+  padding-top: @padding-default*2.4;
   border-bottom: none;
 
   @media (max-width: 768px) {
