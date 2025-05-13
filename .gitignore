@@ -1,5 +1,5 @@
 # Ignore Drupal core.
-/web/core
+/public_html/core
 
 # Ignore dependencies that are managed with Composer.
 /vendor
@@ -9,22 +9,23 @@
 /auth.json
 
 # Ignore paths that contain user-generated content.
-/web/sites/*/files
-/web/sites/simpletest
+/public_html/sites/*/files
+/public_html/sites/simpletest
+/public_html/sites/default/settings.php
 /tmp
 
 # Ignore contrib modules. These should be created during build process.
-/web/modules/contrib/*
-/web/themes/contrib
-/web/libraries/*
+/public_html/modules/contrib/*
+/public_html/themes/contrib
+/public_html/libraries/*
 
 # Ignore standard files created by scaffold.
-web/*.*
-!web/.htaccess
-!web/robots.txt
+public_html/*.*
+!public_html/.htaccess
+!public_html/robots.txt
 
 # ignore pwa app build
-/web/app
+/public_html/app
 /tools/app/static/version.json
 
 # Ignore custom theme build artifacts.
@@ -66,6 +67,9 @@ local.properties
 .classpath
 .settings/
 .loadpath
+
+#osp
+.osp
 
 # External tool builders
 .externalToolBuilders/

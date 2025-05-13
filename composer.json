@@ -81,43 +81,40 @@
     "extra": {
         "drupal-scaffold": {
             "locations": {
-                "web-root": "web/"
+                "web-root": "public_html/"
             }
         },
         "installer-paths": {
-            "web/core": [
+            "public_html/core": [
                 "type:drupal-core"
             ],
-            "web/libraries/{$name}": [
+            "public_html/libraries/{$name}": [
                 "type:drupal-library"
             ],
-            "web/modules/contrib/{$name}": [
+            "public_html/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
-            "web/profiles/contrib/{$name}": [
+            "public_html/profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
-            "web/themes/contrib/{$name}": [
+            "public_html/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
             "drush/Commands/contrib/{$name}": [
                 "type:drupal-drush"
             ],
-            "web/modules/custom/{$name}": [
+            "public_html/modules/custom/{$name}": [
                 "type:drupal-custom-module"
             ],
-            "web/profiles/custom/{$name}": [
+            "public_html/profiles/custom/{$name}": [
                 "type:drupal-custom-profile"
             ],
-            "web/themes/custom/{$name}": [
+            "public_html/themes/custom/{$name}": [
                 "type:drupal-custom-theme"
             ]
         },
         "patches": {
-            "drupal/entity_browser": {
-                "Fix entity browser errors in Drupal 10 - Issue #3440973": "https://git.drupalcode.org/project/entity_browser/-/merge_requests/30.diff",
-                "Fix entity browser errors": "https://www.drupal.org/files/issues/2024-06-12/2914385-35.patch"
-            }
+
         },
         "drupal-core-project-message": {
             "include-keys": [
